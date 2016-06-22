@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sunshine" />
+
+
+
+<meta name="description" content="&amp;#x81EA;&amp;#x5DF1;&amp;#x603B;&amp;#x7ED3;&amp;#x7684; hexo &amp;#x535A;&amp;#x5BA2;&amp;#x521B;&amp;#x5EFA;&amp;#x6B65;&amp;#x9AA4;&amp;#xFF08;windows&amp;#x7CFB;&amp;#x7EDF;&amp;#xFF09;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 博客创建步骤(一)">
+<meta property="og:url" content="http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/index.html">
+<meta property="og:site_name" content="Sunshine Code">
+<meta property="og:description" content="&amp;#x81EA;&amp;#x5DF1;&amp;#x603B;&amp;#x7ED3;&amp;#x7684; hexo &amp;#x535A;&amp;#x5BA2;&amp;#x521B;&amp;#x5EFA;&amp;#x6B65;&amp;#x9AA4;&amp;#xFF08;windows&amp;#x7CFB;&amp;#x7EDF;&amp;#xFF09;">
+<meta property="og:image" content="http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/git.png">
+<meta property="og:image" content="http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/nodeJS.png">
+<meta property="og:image" content="http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/program.png">
+<meta property="og:image" content="http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/mainpage.png">
+<meta property="og:updated_time" content="2016-06-22T07:30:44.448Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 博客创建步骤(一)">
+<meta name="twitter:description" content="&amp;#x81EA;&amp;#x5DF1;&amp;#x603B;&amp;#x7ED3;&amp;#x7684; hexo &amp;#x535A;&amp;#x5BA2;&amp;#x521B;&amp;#x5EFA;&amp;#x6B65;&amp;#x9AA4;&amp;#xFF08;windows&amp;#x7CFB;&amp;#x7EDF;&amp;#xFF09;">
+<meta name="twitter:image" content="http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/git.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="Sunshine Code" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Hexo 博客创建步骤(一) | Sunshine Code</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: true,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?51cd8c02c69f3e01d269c675b94f1d6c";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/头像.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sunshine</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">这里只有代码相关，要了解更多 &gt;&gt;&gt; Sunshine.com</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:1257153984@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/qinanyuan/qinanyuan.github.io" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa 博客园" target="_blank" href="/cnblogs" title="博客园"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="/netease" title="网易云音乐"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="#" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sunshine</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/头像.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sunshine</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">这里只有代码相关，要了解更多 &gt;&gt;&gt; Sunshine.com</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:1257153984@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/qinanyuan/qinanyuan.github.io" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa 博客园" target="_blank" href="/cnblogs" title="博客园"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="/netease" title="网易云音乐"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="#" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Hexo-博客创建步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/22/Hexo-博客创建步骤/" class="article-date">
+      <time datetime="2016-06-22T05:47:18.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo 博客创建步骤(一)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>&#x81EA;&#x5DF1;&#x603B;&#x7ED3;&#x7684; hexo &#x535A;&#x5BA2;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;&#xFF08;windows&#x7CFB;&#x7EDF;&#xFF09;<br><a id="more"></a></p>
+<h2 id="&#x90E8;&#x7F72;&#x524D;&#x4ECB;&#x7ECD;"><a href="#&#x90E8;&#x7F72;&#x524D;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x90E8;&#x7F72;&#x524D;&#x4ECB;&#x7ECD;"></a>&#x90E8;&#x7F72;&#x524D;&#x4ECB;&#x7ECD;</h2><h3 id="Hexo&#x662F;&#x4EC0;&#x4E48;"><a href="#Hexo&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="Hexo&#x662F;&#x4EC0;&#x4E48;"></a>Hexo&#x662F;&#x4EC0;&#x4E48;</h3><ul>
+<li><strong>HEXO</strong> &#x4E2D;&#x6587;&#x5B98;&#x7F51;&#xFF1A;<a href="http://markdownpad.com" target="_blank" rel="external">http://markdownpad.com</a></li>
+<li>&#x4F5C;&#x8005; Tommy Chen&#xFF1A;<a href="https://zespia.tw/" target="_blank" rel="external">https://zespia.tw/</a></li>
+<li><strong>HEXO</strong> &#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Node.js &#x5FEB;&#x901F;&#x3001;&#x7B80;&#x6D01;&#x4E14;&#x9AD8;&#x6548;&#x7684;&#x535A;&#x5BA2;&#x6846;&#x67B6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06; Markdown &#x6587;&#x4EF6;&#x5FEB;&#x901F;&#x7684;&#x751F;&#x6210;&#x9759;&#x6001;&#x7F51;&#x9875;&#xFF0C;&#x6258;&#x7BA1;&#x5728; GitHub Pages &#x4E0A;&#x3002;</li>
+</ul>
+<h3 id="&#x672C;&#x6587;&#x73AF;&#x5883;"><a href="#&#x672C;&#x6587;&#x73AF;&#x5883;" class="headerlink" title="&#x672C;&#x6587;&#x73AF;&#x5883;"></a>&#x672C;&#x6587;&#x73AF;&#x5883;</h3><ul>
+<li>&#x7CFB;&#x7EDF;<ul>
+<li>Windows 10&#xFF08;64 &#x4F4D;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x8F6F;&#x4EF6;<ul>
+<li>git&#xFF1A;2.7.0.2-64-bit(  git&#x5B98;&#x7F51;&#xFF1A;<a href="http://git-scm.com/" target="_blank" rel="external">http://git-scm.com/</a>)</li>
+<li>node.js&#xFF1A;v5.7.0-64-bit Stable(  node.js&#x5B98;&#x7F51;&#xFF1A;<a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a>)</li>
+</ul>
+</li>
+<li>&#x8D26;&#x53F7;<ul>
+<li>Github&#xFF1A;<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
+<li>DNSPOD&#xFF1A;<a href="https://www.dnspod.cn/" target="_blank" rel="external">https://www.dnspod.cn/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x90E8;&#x7F72;&#x5F00;&#x59CB;"><a href="#&#x90E8;&#x7F72;&#x5F00;&#x59CB;" class="headerlink" title="&#x90E8;&#x7F72;&#x5F00;&#x59CB;"></a>&#x90E8;&#x7F72;&#x5F00;&#x59CB;</h2><h3 id="git&#x5B89;&#x88C5;"><a href="#git&#x5B89;&#x88C5;" class="headerlink" title="git&#x5B89;&#x88C5;"></a>git&#x5B89;&#x88C5;</h3><ul>
+<li>&#x53CC;&#x51FB;&#x8FD0;&#x884C; Git-2.7.0.2-64-bit.exe&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4E00;&#x5F8B;&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x4F59;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x5047;&#x8BBE;&#x4F60;&#x5B89;&#x88C5;&#x7684;&#x76EE;&#x5F55;&#x4F4D;&#x7F6E;&#x8DDF;&#x6211;&#x4E00;&#x6837;&#xFF1A;C:\Program Files\Git</li>
+<li>&#x6253;&#x5F00; Git Bash&#xFF08;&#x8DEF;&#x5F84;&#xFF1A;<code>C:\Program Files\Git\git-bash.exe</code>&#xFF09;&#xFF0C;&#x8F93;&#x5165;&#xFF1A;<code>git --version</code><ul>
+<li>&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#xFF1A;<code>git version 2.7.0.windows.2</code>&#xFF0C;&#x8FD9;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;</li>
+<li><img src="/2016/06/22/Hexo-&#x535A;&#x5BA2;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;/git.png" alt="alt text"></li>
+</ul>
+</li>
+</ul>
+<h3 id="node-js&#x5B89;&#x88C5;"><a href="#node-js&#x5B89;&#x88C5;" class="headerlink" title="node.js&#x5B89;&#x88C5;"></a>node.js&#x5B89;&#x88C5;</h3><ul>
+<li>&#x53CC;&#x51FB;&#x8FD0;&#x884C; <code>node-v5.7.0-x64.msi</code>&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4E00;&#x5F8B;&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x4F59;&#x7684;&#x9009;&#x62E9;&#x3002;</li>
+<li>&#x5B89;&#x88C5;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x6253;&#x5F00; <code>Git Bash</code>&#xFF0C;&#x8F93;&#x5165;&#xFF1A;<code>npm -v</code><ul>
+<li>&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#xFF1A;3.6.0&#xFF0C;&#x5219;&#x8868;&#x793A; Node.js &#x5B89;&#x88C5;&#x6210;&#x529F;</li>
+<li><img src="/2016/06/22/Hexo-&#x535A;&#x5BA2;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;/nodeJS.png" alt="alt text"></li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5B89;&#x88C5;Hexo&#x6846;&#x67B6;"><a href="#&#x5B89;&#x88C5;Hexo&#x6846;&#x67B6;" class="headerlink" title="&#x5B89;&#x88C5;Hexo&#x6846;&#x67B6;"></a>&#x5B89;&#x88C5;Hexo&#x6846;&#x67B6;</h3><ul>
+<li>&#x5B89;&#x88C5;hexo-cli<ul>
+<li>&#x6253;&#x5F00; Git Bash,&#x8F93;&#x5165;&#x4E00;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<br><code>npm install hexo-cli -g</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;"><a href="#&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;" class="headerlink" title="&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;"></a>&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;</h2><h3 id="&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;&#x6B65;&#x9AA4;"><a href="#&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;&#x6B65;&#x9AA4;" class="headerlink" title="&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;&#x6B65;&#x9AA4;"></a>&#x521B;&#x5EFA;hexo&#x535A;&#x5BA2;&#x6B65;&#x9AA4;</h3><ul>
+<li>&#x73B0;&#x5728;&#x5047;&#x8BBE;&#x6211;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>hexo</code> &#x7684;&#x9879;&#x76EE;&#xFF0C;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5C31;&#x653E;&#x5728;&#xFF1A;<code>E:\git_work_space</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728; E:\git_work_space &#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; hexo &#x76EE;&#x5F55;&#x3002;&#x73B0;&#x5728;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x5168;&#x8DEF;&#x5F84;&#x662F;&#xFF1A;E:\git_work_space\hexo</li>
+<li>&#x6253;&#x5F00; Git Bash:<ul>
+<li>&#x8FDB;&#x5165;&#x8BE5;&#x76EE;&#x5F55;&#xFF1A;<code>cd e:/git_work_space/hexo</code></li>
+<li>&#x7136;&#x540E;&#x6267;&#x884C;&#xFF1A;<code>hexo init</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x4E5F;&#x4F1A;&#x6BD4;&#x8F83;&#x957F;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x8981;&#x7B49;&#x51E0;&#x5206;&#x949F;&#xFF0C;&#x6709;&#x663E;&#x793A; WARN &#x4E5F;&#x4E0D;&#x7528;&#x7BA1;</li>
+<li>&#x6700;&#x540E;&#x6267;&#x884C;&#xFF1A;<code>cnpm install</code>&#xFF0C;&#x6709;&#x663E;&#x793A; WARN &#x4E5F;&#x4E0D;&#x7528;&#x7BA1;</li>
+<li>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;E:\git_work_space\hexo &#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x662F;&#x8FD9;&#x6837;&#x7684;</li>
+<li><img src="/2016/06/22/Hexo-&#x535A;&#x5BA2;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;/program.png" alt="alt text"></li>
+<li>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x542F;&#x52A8; hexo &#x672C;&#x5730;&#x670D;&#x52A1;&#xFF0C;&#x770B;&#x4E0B;&#x9ED8;&#x8BA4;&#x7684;&#x535A;&#x5BA2;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF0C;&#x547D;&#x4EE4;&#xFF1A;<code>hexo server</code></li>
+<li>&#x73B0;&#x5728;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;&#xFF1A;<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;</li>
+<li><img src="/2016/06/22/Hexo-&#x535A;&#x5BA2;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;/mainpage.png" alt="alt text"></li>
+<li>&#x5982;&#x679C;&#x8981;&#x505C;&#x6B62; hexo &#x670D;&#x52A1;&#xFF1A;&#x5728; Git Bash &#x4E0B;&#x6309; Ctrl + C &#x5373;&#x53EF;</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/06/22/Hexo-博客创建步骤/">Hexo 博客创建步骤(一)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sunshine</a></p>
+        <p><span>发布时间:</span>2016-06-22, 13:47:18</p>
+        <p><span>最后更新:</span>2016-06-22, 15:30:44</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/22/Hexo-博客创建步骤/" title="Hexo 博客创建步骤(一)">http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://code.youmeek.com/2016/06/22/Hexo-博客创建步骤/　　作者: Sunshine" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#部署前介绍"><span class="toc-number">1.</span> <span class="toc-text">部署前介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo是什么"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本文环境"><span class="toc-number">1.2.</span> <span class="toc-text">本文环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署开始"><span class="toc-number">2.</span> <span class="toc-text">部署开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git安装"><span class="toc-number">2.1.</span> <span class="toc-text">git安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js安装"><span class="toc-number">2.2.</span> <span class="toc-text">node.js安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo框架"><span class="toc-number">2.3.</span> <span class="toc-text">安装Hexo框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建hexo博客"><span class="toc-number">3.</span> <span class="toc-text">创建hexo博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建hexo博客步骤"><span class="toc-number">3.1.</span> <span class="toc-text">创建hexo博客步骤</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+</script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Hexo 博客创建步骤(一)　| Sunshine Code　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2104450';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/Hexo-博客创建步骤/">Hexo 博客创建步骤(一)</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Sunshine
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
