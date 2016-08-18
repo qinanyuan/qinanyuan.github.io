@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunshine Code">
-<meta property="og:url" content="http://code.youmeek.com/tags/Hexo/index.html">
+<meta name="description" content="&amp;#x6279;&amp;#x5904;&amp;#x7406;&amp;#x64CD;&amp;#x4F5C;&amp;#x53EF;&amp;#x663E;&amp;#x8457;&amp;#x63D0;&amp;#x9AD8;&amp;#x7A0B;&amp;#x5E8F;&amp;#x4E0E;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x9AD8;&amp;#x6548;&amp;#x7387;&amp;#x5DE5;&amp;#x4F5C;&amp;#xFF0C;&amp;#x964D;&amp;#x4F4E;&amp;#x7A0B;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis的批处理操作（ORACLE）">
+<meta property="og:url" content="http://code.youmeek.com/2016/06/22/Mybatis的批处理操作（ORACLE）/index.html">
 <meta property="og:site_name" content="Sunshine Code">
+<meta property="og:description" content="&amp;#x6279;&amp;#x5904;&amp;#x7406;&amp;#x64CD;&amp;#x4F5C;&amp;#x53EF;&amp;#x663E;&amp;#x8457;&amp;#x63D0;&amp;#x9AD8;&amp;#x7A0B;&amp;#x5E8F;&amp;#x4E0E;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x9AD8;&amp;#x6548;&amp;#x7387;&amp;#x5DE5;&amp;#x4F5C;&amp;#xFF0C;&amp;#x964D;&amp;#x4F4E;&amp;#x7A0B;">
+<meta property="og:updated_time" content="2016-08-18T02:48:38.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sunshine Code">
+<meta name="twitter:title" content="Mybatis的批处理操作（ORACLE）">
+<meta name="twitter:description" content="&amp;#x6279;&amp;#x5904;&amp;#x7406;&amp;#x64CD;&amp;#x4F5C;&amp;#x53EF;&amp;#x663E;&amp;#x8457;&amp;#x63D0;&amp;#x9AD8;&amp;#x7A0B;&amp;#x5E8F;&amp;#x4E0E;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x9AD8;&amp;#x6548;&amp;#x7387;&amp;#x5DE5;&amp;#x4F5C;&amp;#xFF0C;&amp;#x964D;&amp;#x4F4E;&amp;#x7A0B;">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: Hexo | Sunshine Code</title>
+<title>Mybatis的批处理操作（ORACLE） | Sunshine Code</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,9 +66,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         open_in_new: true,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -294,54 +298,229 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Mybatis的批处理操作（ORACLE）" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/06/22/Hexo-博客创建步骤/" class="archive-article-date">
-      <time datetime="2016-06-22T05:47:18.000Z" itemprop="datePublished">06-22</time>
+    <div class="article-meta">
+      <a href="/2016/06/22/Mybatis的批处理操作（ORACLE）/" class="article-date">
+      <time datetime="2016-06-22T05:47:18.000Z" itemprop="datePublished">2016-06-22</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/22/Hexo-博客创建步骤/">Hexo 博客创建步骤(一)</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mybatis的批处理操作（ORACLE）
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>&#x6279;&#x5904;&#x7406;&#x64CD;&#x4F5C;&#x53EF;&#x663E;&#x8457;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x9AD8;&#x6548;&#x7387;&#x5DE5;&#x4F5C;&#xFF0C;&#x964D;&#x4F4E;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xFF01;<br><a id="more"></a></p>
+<h2 id="&#x5EFA;&#x8868;&#x8BED;&#x53E5;"><a href="#&#x5EFA;&#x8868;&#x8BED;&#x53E5;" class="headerlink" title="&#x5EFA;&#x8868;&#x8BED;&#x53E5;"></a>&#x5EFA;&#x8868;&#x8BED;&#x53E5;</h2><pre><code>create table USER  (
+ID               NUMBER                  not null,
+USER_NAME        VARCHAR2(100),
+USER_AGE         VARCHAR2(100),
+BIRTHDAY         TIMESTAMP,
+constraint PK_USER primary key (ID)
+);
+create sequence SEQ_USER
+    increment by 1
+    start with 1
+    nomaxvalue
+    nocycle
+    cache 10;
+</code></pre><h2 id="xml&#x8BED;&#x53E5;"><a href="#xml&#x8BED;&#x53E5;" class="headerlink" title="xml&#x8BED;&#x53E5;"></a>xml&#x8BED;&#x53E5;</h2><h3 id="&#x6279;&#x91CF;&#x65B0;&#x589E;"><a href="#&#x6279;&#x91CF;&#x65B0;&#x589E;" class="headerlink" title="&#x6279;&#x91CF;&#x65B0;&#x589E;"></a>&#x6279;&#x91CF;&#x65B0;&#x589E;</h3><p>   &#x6309;&#x7167;&#x4E3B;&#x952E;&#x7684;&#x751F;&#x6210;&#x65B9;&#x5F0F;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x81EA;&#x7531;&#x9009;&#x62E9;<br><strong>&#x4E3B;&#x952E;&#x81EA;&#x5B9A;&#x4E49;</strong></p>
+<pre><code>&lt;insert id=&quot;insertUsersBatch&quot; parameterType=&quot;java.util.List&quot;&gt;
+    insert into USER (    
+        ID, USER_NAME, USER_AGE, BIRTHDAY
+    )    
+    &lt;foreach collection=&quot;list&quot; item=&quot;item&quot; index=&quot;index&quot; separator=&quot;union all&quot; &gt;     
+        (select      
+            #{item.id,jdbcType=LONG},   
+            #{item.userName,jdbcType=VARCHAR}, 
+            #{item.userAge,jdbcType=VARCHAR},    
+            #{item.brithday,jdbcType=TIMESTAMP}  
+        from dual)  
+    &lt;/foreach&gt;  
+&lt;/insert&gt;
+</code></pre><p><strong>&#x4E3B;&#x952E;&#x5E8F;&#x5217;&#x81EA;&#x589E;</strong></p>
+<pre><code>&lt;insert id=&quot;insertUsersBatch&quot; parameterType=&quot;java.util.List&quot;&gt;
+   insert into USER  (    
+        ID, USER_NAME, USER_AGE, BIRTHDAY
+     )
+   select SEQ_USER.NEXTVAL,A.* from(
+   &lt;foreach collection=&quot;list&quot; item=&quot;item&quot; index=&quot;index&quot; separator=&quot;union all&quot; &gt; 
+      select  
+          #{item.userName,jdbcType=VARCHAR}, 
+          #{item.userAge,jdbcType=VARCHAR},    
+          #{item.brithday,jdbcType=TIMESTAMP}
+       from dual
+    &lt;/foreach&gt;) A
+&lt;/insert&gt;
+</code></pre><h3 id="&#x6279;&#x91CF;&#x66F4;&#x65B0;"><a href="#&#x6279;&#x91CF;&#x66F4;&#x65B0;" class="headerlink" title="&#x6279;&#x91CF;&#x66F4;&#x65B0;"></a>&#x6279;&#x91CF;&#x66F4;&#x65B0;</h3><p><strong>&#x66F4;&#x65B0;&#x6709;&#x70B9;&#x7279;&#x522B;</strong></p>
+<pre><code>&lt;update id=&quot;updateUserBatch&quot; parameterType=&quot;java.util.List&quot;&gt;
+    &lt;foreach collection=&quot;list&quot; item=&quot;item&quot; index=&quot;index&quot; open=&quot;begin&quot; close=&quot;;end;&quot; separator=&quot;;&quot; &gt;
+        update USER
+        &lt;set&gt;
+        &lt;if test=&quot;item.userName!=null and item.userName!=&apos;&apos;&quot;&gt;
+            USER_NAME = #{item.userName},
+        &lt;/if&gt;
+        &lt;if test=&quot;item.userAge!=null and item.userAge!=&apos;&apos;&quot;&gt;
+            USER_AGE = #{item.userAge},
+        &lt;/if&gt;
+        &lt;if test=&quot;item.birthday!=null and item.birthday!=&apos;&apos;&quot;&gt;
+            BIRTHDAY = #{item.birthday},
+        &lt;/if&gt;
+        &lt;/set&gt;
+        where ID = #{item.id}
+        &lt;/foreach&gt;
+ &lt;/update&gt;
+</code></pre><h3 id="&#x6279;&#x91CF;&#x5220;&#x9664;"><a href="#&#x6279;&#x91CF;&#x5220;&#x9664;" class="headerlink" title="&#x6279;&#x91CF;&#x5220;&#x9664;"></a>&#x6279;&#x91CF;&#x5220;&#x9664;</h3><p><strong>&#x5220;&#x9664;&#x5C31;&#x6CA1;&#x4EC0;&#x4E48;&#x4E86;</strong></p>
+<pre><code>&lt;delete id=&quot;deleteUsers&quot; parameterType=&quot;java.util.List&quot;&gt;
+    delete from USER
+    &lt;where&gt;
+    &lt;foreach collection=&quot;list&quot; index=&quot;index&quot; item=&quot;item&quot; open=&quot;(&quot; separator=&quot;or&quot; close=&quot;)&quot;&gt; 
+      id=#{item.id}
+     &lt;/foreach&gt;
+    &lt;/where&gt;
+&lt;/delete&gt;
+</code></pre>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/06/22/Mybatis的批处理操作（ORACLE）/">Mybatis的批处理操作（ORACLE）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sunshine</a></p>
+        <p><span>发布时间:</span>2016-06-22, 13:47:18</p>
+        <p><span>最后更新:</span>2016-08-18, 10:48:38</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/22/Mybatis的批处理操作（ORACLE）/" title="Mybatis的批处理操作（ORACLE）">http://code.youmeek.com/2016/06/22/Mybatis的批处理操作（ORACLE）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://code.youmeek.com/2016/06/22/Mybatis的批处理操作（ORACLE）/　　作者: Sunshine" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/22/Hexo-博客创建步骤/">
+                    Hexo 博客创建步骤(一)
+                </a>
+            </div>
+        
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#建表语句"><span class="toc-number">1.</span> <span class="toc-text">建表语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xml语句"><span class="toc-number">2.</span> <span class="toc-text">xml语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#批量新增"><span class="toc-number">2.1.</span> <span class="toc-text">批量新增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#批量更新"><span class="toc-number">2.2.</span> <span class="toc-text">批量更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#批量删除"><span class="toc-number">2.3.</span> <span class="toc-text">批量删除</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+</script>
+
+
 
     
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Mybatis的批处理操作（ORACLE）　| Sunshine Code　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2104450"></script>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/06/22/Hexo-博客创建步骤/" title="上一篇: Hexo 博客创建步骤(一)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/Hexo-博客创建步骤/">Hexo 博客创建步骤(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/Mybatis的批处理操作（ORACLE）/">Mybatis的批处理操作（ORACLE）</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
